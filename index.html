@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Password Generator</title>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <h1>Password Generator</h1>
+        
+        <h4>Enter a length between 5 to 128 for your password below</h2>
+        <label for="length">Length:</label><input type="text" id="length" minlength="5" maxlength="128" size="10">
+        <button onclick="generate();" type="button">Generate Password</button><br />
+        <input type="text" id="result" size="35" value="Result" disabled><br />
+        <button onclick="copyPassword();" type="button">Copy password to Clipboard</button><br />
+
+    </body>
+
+</html>
