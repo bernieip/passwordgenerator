@@ -4,15 +4,34 @@
         <title>Password Generator</title>
         <meta charset="utf-8">
     </head>
+
     <body>
         <h1>Password Generator</h1>
         
-        <h4>Enter a length between 5 to 128 for your password below</h2>
-        <label for="length">Length:</label><input type="text" id="length" minlength="5" maxlength="128" size="10">
-        <button onclick="generate();" type="button">Generate Password</button><br />
-        <input type="text" id="result" size="35" value="Result" disabled><br />
-        <button onclick="copyPassword();" type="button">Copy password to Clipboard</button><br />
+        <h4>Enter a length between 5 to 128 for your password below</h4>
 
+        <form name="generatePassword">
+                <b>Password Length:</b> <input type="text" name="thelength" size="3"><br />
+                <input type="text" size="10" name="output">
+                <input type="button" value="Generate Password" onClick="showPassword(this.form.thelength.value)">
+        </form>
     </body>
+
+    <script>
+        var randomCharacters="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890!@#$%^&*"
+        var outputPassword=''
+
+        function randomPassword(passwordLength){
+        outputPassword=''
+        for (i=0;i<passwordLength;i++)
+        outputPassword+=randomCharacters.charAt(Math.floor(Math.random()*randomCharacters.length))
+        return outputPassword
+        }
+   
+        function showPassword(enterlength){
+        document.generatePassword.output.value=randomPassword(enterlength)
+        }
+
+    </script>
 
 </html>
