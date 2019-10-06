@@ -12,14 +12,16 @@
 
         <form name="generatePassword">
                 <b>Password Length:</b> <input type="text" name="thelength" size="3"><br />
-                <input type="text" size="10" name="output">
-                <input type="button" value="Generate Password" onClick="showPassword(this.form.thelength.value)">
+                <input type="text" size="10" name="output" id="output">
+                <input type="button" value="Generate Password" onClick="showPassword(this.form.thelength.value)"><br />
+                <input type="button" value="Copy to Clipboard" onClick="copyPassword()">
         </form>
     </body>
 
     <script>
         var randomCharacters="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890!@#$%^&*"
         var outputPassword=''
+        var copyText = document.getElementById("output")
 
         function randomPassword(passwordLength){
         outputPassword=''
@@ -30,6 +32,11 @@
    
         function showPassword(enterlength){
         document.generatePassword.output.value=randomPassword(enterlength)
+        }
+
+        function copyPassword() {
+        copyText.select();
+        document.execCommand("copy");
         }
 
     </script>
