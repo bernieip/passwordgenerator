@@ -40,14 +40,13 @@
         for (i=0;i<passwordLength;i++)
         outputPassword+=randomCharacters.charAt(Math.floor(Math.random()*randomCharacters.length))
 
-        if (i < 8){
-            alert("*ERROR* Your password must be between between 8 and 128 long");
+        if (i < 8 || i > 128){
+            alert("*ERROR* Your password must be between 8 to 128 characters long");
         }
         else {
         return outputPassword
         }
-        
-    }
+        }
         // The showPassword function will show the output of the randomPassword function in the textbox
 
         function showPassword(enterlength){
