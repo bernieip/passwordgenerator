@@ -16,7 +16,7 @@ The application can be accessed at the following site: https://bernieip.github.i
 You can then enter a number between 8 and 128 characters for the password length and press "Generate Password"
 You can then click the "Copy to clipboard" button to save the password.
 
-![Image description](/images/markdown-preview-image.png)
+![Image description](./screenshot.png)
 
 ## Tech Stack
 
